@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#A84524" />
+<title>Menu · Fasoulia Deli Center — Κοζάνη</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#F7F3EB;
+    --surface:#FFFFFF;
+    --surface-2:#F1ECE1;
+    --ink:#2B2A1F;
+    --ink-2:#5A5647;
+    --ink-3:#8A8673;
+    --line:#E5DECF;
+    --primary:#A84524;
+    --primary-ink:#7A2F16;
+    --primary-soft:#F5E3D9;
+    --accent:#7C8A5F;
+    --accent-soft:#E8EBDF;
+    --gold:#C79C4E;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0; padding:0}
+  body{
+    font-family:'Inter', system-ui, -apple-system, sans-serif;
+    background:var(--bg); color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1, h2, h3{font-family:'Fraunces', Georgia, serif; font-weight:500; letter-spacing:-.02em; margin:0}
+  a{color:inherit; text-decoration:none}
+  .container{max-width:780px; margin:0 auto; padding:0 20px}
+
+  /* ── Sticky header ── */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  header .top-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0;
+  }
+  .back{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 12px; border-radius:8px;
+    font-size:.88rem; font-weight:500; color:var(--ink-2);
+    transition:background .15s;
+  }
+  .back:hover{background:var(--surface-2); color:var(--ink)}
+  .brand{display:flex; align-items:center; gap:10px}
+  .brand-mark{
+    width:32px; height:32px; border-radius:8px;
+    background:var(--primary-soft);
+    display:grid; place-items:center;
+    padding:3px;
+    flex-shrink:0;
+  }
+  .brand-mark svg{width:100%; height:100%; display:block}
+  .brand .name{font-family:'Fraunces', serif; font-weight:500; font-size:1rem}
+  .phone-btn{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 14px; border-radius:999px;
+    background:var(--primary); color:#fff;
+    font-size:.86rem; font-weight:500;
+    transition:background .15s;
+  }
+  .phone-btn:hover{background:var(--primary-ink)}
+  .phone-btn svg{width:14px; height:14px}
+
+  /* ── Category tabs ── */
+  .tabs{
+    display:flex; gap:4px;
+    overflow-x:auto; padding:10px 0 12px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{
+    flex-shrink:0;
+    padding:8px 14px; border-radius:999px;
+    font-size:.82rem; font-weight:500;
+    color:var(--ink-2); background:var(--surface-2);
+    white-space:nowrap;
+    transition:all .15s;
+  }
+  .tabs a:hover{background:var(--primary-soft); color:var(--primary-ink)}
+
+  /* ── Hero header ── */
+  .page-hero{
+    padding:40px 0 32px;
+    text-align:center;
+  }
+  .page-hero .eyebrow{
+    font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--primary); font-weight:600;
+    display:inline-flex; align-items:center; gap:8px;
+    margin-bottom:16px;
+  }
+  .page-hero .eyebrow::before, .page-hero .eyebrow::after{
+    content:""; width:28px; height:1px; background:var(--primary);
+  }
+  .page-hero h1{
+    font-size:clamp(2.2rem, 6vw, 3rem);
+    line-height:1.1;
+  }
+  .page-hero h1 em{font-style:italic; color:var(--primary); font-weight:400}
+  .page-hero p{
+    color:var(--ink-2); margin-top:12px;
+    font-size:.95rem; max-width:480px; margin-left:auto; margin-right:auto;
+  }
+  .page-hero .updated{
+    margin-top:18px;
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:.78rem; color:var(--accent);
+    font-weight:500;
+  }
+  .page-hero .updated::before{
+    content:""; width:6px; height:6px; border-radius:50%; background:var(--accent);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  /* ── Category section ── */
+  .category{padding:28px 0; scroll-margin-top:80px}
+  .cat-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:12px; padding-bottom:14px;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:4px;
+  }
+  .cat-head h2{
+    font-size:clamp(1.5rem, 3.5vw, 1.8rem);
+    font-weight:500;
+  }
+  .cat-head h2 .ico{
+    font-family:'Fraunces', serif; font-style:italic; color:var(--primary);
+    margin-right:10px; font-weight:400;
+  }
+  .cat-head .note{font-size:.78rem; color:var(--ink-3); letter-spacing:.02em}
+
+  .item{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:20px;
+    padding:18px 0;
+    border-bottom:1px dotted var(--line);
+    align-items:baseline;
+  }
+  .item:last-child{border-bottom:0}
+  .item .name{
+    font-family:'Fraunces', serif; font-weight:500; font-size:1.08rem;
+    letter-spacing:-.01em;
+  }
+  .item .name .tag{
+    display:inline-block; margin-left:8px;
+    font-family:'Inter', sans-serif; font-size:.68rem;
+    padding:2px 7px; border-radius:999px;
+    background:var(--accent-soft); color:var(--accent);
+    letter-spacing:.06em; text-transform:uppercase; font-weight:600;
+    vertical-align:middle; transform:translateY(-1px);
+  }
+  .item .name .tag.bio{background:var(--accent-soft); color:#5A6B3F}
+  .item .name .tag.new{background:var(--primary-soft); color:var(--primary-ink)}
+  .item .name .tag.signature{background:#F8ECD2; color:#8A6A1F}
+  .item .desc{
+    color:var(--ink-2); font-size:.88rem; line-height:1.5;
+    margin-top:4px; font-family:'Inter', sans-serif;
+  }
+  .item .price{
+    font-family:'Fraunces', serif; font-weight:500;
+    color:var(--primary); font-size:1.1rem;
+    white-space:nowrap;
+  }
+
+  /* ── Variants table (for drinks with sizes) ── */
+  .variants{
+    display:flex; gap:6px; flex-wrap:wrap;
+    margin-top:6px;
+  }
+  .variants span{
+    font-size:.78rem; color:var(--ink-2);
+    padding:3px 10px; border-radius:999px;
+    background:var(--surface-2); font-weight:500;
+    font-family:'Inter', sans-serif;
+  }
+  .variants span b{color:var(--primary); font-weight:600; margin-left:4px}
+
+  /* ── Footer ── */
+  footer{
+    margin-top:40px;
+    padding:40px 0 32px;
+    background:var(--ink); color:#A8A396;
+    text-align:center; font-size:.86rem;
+  }
+  footer .fbrand{
+    display:inline-flex; align-items:center; gap:10px;
+    margin-bottom:14px; color:#fff;
+  }
+  footer .fbrand .brand-mark{width:36px; height:36px; background:rgba(247,243,235,.12)}
+  footer .fbrand .name{font-family:'Fraunces', serif; font-weight:500; font-size:1.1rem; color:#fff}
+  footer p{margin:8px 0; line-height:1.6}
+  footer a{color:var(--gold)}
+  footer .hours{
+    display:inline-flex; flex-wrap:wrap; gap:4px 12px; justify-content:center;
+    margin:10px auto; max-width:500px;
+    font-size:.82rem; color:#C9C3B0;
+  }
+  footer .hours span{white-space:nowrap}
+  footer .social{
+    display:inline-flex; gap:12px; margin-top:20px;
+  }
+  footer .social a{
+    width:36px; height:36px; border-radius:50%;
+    background:rgba(255,255,255,.06);
+    display:grid; place-items:center;
+    transition:all .2s;
+  }
+  footer .social a:hover{background:var(--gold); color:var(--ink); transform:translateY(-2px)}
+
+  footer .ccopy{margin-top:24px; font-size:.74rem; color:#6E6A5D; letter-spacing:.04em}
+
+  /* ── Share section ── */
+  .share-section{
+    margin:28px auto;
+    padding:22px 20px;
+    background:var(--surface);
+    border:1px dashed var(--primary);
+    border-radius:14px;
+    display:flex; gap:18px; align-items:center;
+    max-width:720px;
+  }
+  .share-section img{
+    width:70px; height:70px; border-radius:8px;
+    flex-shrink:0;
+  }
+  .share-section .body{flex:1}
+  .share-section .t{
+    font-family:'Fraunces', serif; font-weight:500; font-size:1.02rem; margin-bottom:4px;
+  }
+  .share-section .d{font-size:.82rem; color:var(--ink-2); line-height:1.4}
+  .share-section .actions{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+  .share-section button{
+    background:var(--ink); color:var(--bg);
+    border:0; padding:8px 14px; border-radius:999px;
+    font-size:.78rem; font-weight:500; cursor:pointer;
+    font-family:'Inter', sans-serif;
+    transition:background .15s;
+  }
+  .share-section button:hover{background:var(--primary)}
+  @media (max-width:500px){
+    .share-section{flex-direction:column; text-align:center}
+    .share-section .actions{justify-content:center}
+  }
+
+  /* Preview pill — smaller */
+  .preview-pill{
+    position:fixed; bottom:12px; right:12px;
+    background:rgba(43,42,31,.95); color:#F7F3EB;
+    padding:6px 12px; border-radius:999px;
+    font-family:'Inter',system-ui,sans-serif; font-size:.64rem; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase;
+    z-index:9999; box-shadow:0 8px 24px rgba(0,0,0,.18);
+    display:inline-flex; align-items:center; gap:6px;
+    pointer-events:none;
+  }
+  .preview-pill span{width:6px; height:6px; border-radius:50%; background:var(--gold)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="top-row">
+      <a href="index.html" class="back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Πίσω
+      </a>
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M15.2 3 C 13 5, 12 8.5, 14.2 11.5 C 16.5 10.5, 17.2 7, 15.2 3 Z" fill="#7C8A5F"/><path d="M10 13 C 5.8 16, 6.2 23.5, 11.5 26.5 C 18.5 28.5, 25.5 23.5, 24.5 17 C 23.5 12, 18.8 10.2, 14 11 C 12.2 11.2, 11 12, 10 13 Z" fill="#D4A87D" stroke="#2B2A1F" stroke-width="1.4"/><path d="M13 17 C 15 15, 18 14, 21 15.5" stroke="#2B2A1F" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg></div>
+        <span class="name">Fasoulia</span>
+      </a>
+      <a href="tel:+306944686065" class="phone-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+        Τραπέζι
+      </a>
+    </div>
+    <div class="tabs">
+      <a href="#breakfast">Πρωινό & Brunch</a>
+      <a href="#deli">Deli πιάτα</a>
+      <a href="#salads">Σαλάτες</a>
+      <a href="#traditional">Παραδοσιακά</a>
+      <a href="#coffee">Καφέδες</a>
+      <a href="#cold">Κρύα ροφήματα</a>
+      <a href="#sweets">Γλυκά</a>
+      <a href="#market">Mini market</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="page-hero">
+      <span class="eyebrow">Menu</span>
+      <h1>Η λίστα μας —<br/><em>φρέσκια</em>, κάθε πρωί.</h1>
+      <p>Όλα τα πιάτα φτιάχνονται εδώ, με τοπικά προϊόντα και τα βιολογικά μας φασόλια από το Σισάνι.</p>
+      <div class="updated">Ενημερώθηκε σήμερα, 08:00</div>
+    </div>
+
+    <!-- ── Πρωινό & Brunch ── -->
+    <section class="category" id="breakfast">
+      <div class="cat-head">
+        <h2><span class="ico">01</span>Πρωινό & Brunch</h2>
+        <span class="note">καθημερινά έως 13:00</span>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Αυγά Benedict <span class="tag signature">Signature</span></div>
+          <div class="desc">Ζεστό αγγλικό muffin, καπνιστός σολομός ή ζαμπόν ωρίμανσης, σάλτσα hollandaise, σπανάκι.</div>
+        </div>
+        <div class="price">€11.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Tartine αβοκάντο <span class="tag bio">Bio</span></div>
+          <div class="desc">Ψωμί προζύμης, smashed avocado, poached αυγό, chili flakes, lime.</div>
+        </div>
+        <div class="price">€7.80</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Πίτα με φέτα και μέλι</div>
+          <div class="desc">Χωριάτικη πίτα ζεστή από τον φούρνο, ΠΟΠ φέτα, μέλι Σιάτιστας, σουσάμι.</div>
+        </div>
+        <div class="price">€6.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Αυγά ποσέ με γίγαντες <span class="tag new">Νέο</span></div>
+          <div class="desc">Τα δικά μας φασόλια Σισανίου, αυγά ποσέ, ελαιόλαδο, θυμάρι, ψωμί.</div>
+        </div>
+        <div class="price">€9.20</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Pancakes προζυμένια</div>
+          <div class="desc">Με σπιτικό μέλι, βούτυρο, φρούτα εποχής και καρύδια Κοζάνης.</div>
+        </div>
+        <div class="price">€8.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Omelette χορταρικών</div>
+          <div class="desc">Αυγά φάρμας, σπανάκι, μανιτάρια, φέτα, ντομάτα.</div>
+        </div>
+        <div class="price">€7.50</div>
+      </div>
+    </section>
+
+    <!-- ── Deli πιάτα ── -->
+    <section class="category" id="deli">
+      <div class="cat-head">
+        <h2><span class="ico">02</span>Deli πιάτα &amp; Πλατό</h2>
+        <span class="note">για μοιρασιά</span>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Πλατό Fasoulia — για 2 <span class="tag signature">Signature</span></div>
+          <div class="desc">4 τυριά ωρίμανσης, 3 αλλαντικά, γίγαντες, ελιές Καλαμών, πατέ ελιάς, ντιπ φασολιών, κρουτόν.</div>
+        </div>
+        <div class="price">€22.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Πλατό μικρό — για 1</div>
+          <div class="desc">3 τυριά, 2 αλλαντικά, ελιές, ντιπ, κρουτόν.</div>
+        </div>
+        <div class="price">€12.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Γίγαντες του Σισανίου <span class="tag bio">Bio</span></div>
+          <div class="desc">Ψημένοι αργά στον φούρνο με ντομάτα, κρεμμύδι, ελαιόλαδο. Συνοδεύεται με φρέσκο ψωμί.</div>
+        </div>
+        <div class="price">€8.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Φάβα ημέρας</div>
+          <div class="desc">Με καραμελωμένο κρεμμύδι, κάπαρη, ελαιόλαδο Μονεμβάσιας.</div>
+        </div>
+        <div class="price">€7.20</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Τυρί σχάρας με μέλι και σύκο</div>
+          <div class="desc">Φορμαέλα φλαμπέ, μέλι θυμαρίσιο, ξερό σύκο Αιγίου.</div>
+        </div>
+        <div class="price">€9.50</div>
+      </div>
+    </section>
+
+    <!-- ── Σαλάτες ── -->
+    <section class="category" id="salads">
+      <div class="cat-head">
+        <h2><span class="ico">03</span>Σαλάτες</h2>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Κινόα με γίγαντες <span class="tag bio">Bio</span></div>
+          <div class="desc">Κινόα, φασόλια Σισανίου, αβοκάντο, λαχανικά, lemon dressing.</div>
+        </div>
+        <div class="price">€10.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Χωριάτικη Deli</div>
+          <div class="desc">Παραδοσιακή, με φέτα ΠΟΠ, κρεμμύδι, κάπαρη, ελιές και ελαιόλαδο extra virgin.</div>
+        </div>
+        <div class="price">€8.80</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Caesar σπιτική</div>
+          <div class="desc">Ρόκα-μαρούλι, κοτόπουλο σχάρας, κρουτόν, παρμεζάνα, σάλτσα Caesar.</div>
+        </div>
+        <div class="price">€9.80</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Ζεστή σαλάτα μανιταριών</div>
+          <div class="desc">Ανάμεικτα μανιτάρια, πράσινα, κατσικίσιο, μέλι, φουντούκι.</div>
+        </div>
+        <div class="price">€9.20</div>
+      </div>
+    </section>
+
+    <!-- ── Παραδοσιακά ── -->
+    <section class="category" id="traditional">
+      <div class="cat-head">
+        <h2><span class="ico">04</span>Παραδοσιακά</h2>
+        <span class="note">από τη γιαγιά, για εσάς</span>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Μακεδονική φασολάδα</div>
+          <div class="desc">Με τα δικά μας φασόλια, κλασσική συνταγή δυτικής Μακεδονίας.</div>
+        </div>
+        <div class="price">€8.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Χειροποίητα λαγάνα με αλλαντικά</div>
+          <div class="desc">Σπιτικό λαγάνα, τυρί, ζαμπόν ή τόνος.</div>
+        </div>
+        <div class="price">€6.80</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Μπουγιουρντί</div>
+          <div class="desc">Φέτα, ντομάτα, πιπεριά, ρίγανη — στο φούρνο.</div>
+        </div>
+        <div class="price">€7.50</div>
+      </div>
+    </section>
+
+    <!-- QR Share section - στο μέσον -->
+    <div class="share-section">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Fkenbei.github.io%2Ffasoulia-deli-preview%2Fmenu.html&bgcolor=FFFFFF&color=2B2A1F&margin=4" alt="QR menu">
+      <div class="body">
+        <div class="t">Μοιραστείτε το menu</div>
+        <div class="d">Στείλτε αυτό το link σε φίλο ή σκανάρετε για να το ανοίξετε σε άλλη συσκευή.</div>
+        <div class="actions">
+          <button onclick="shareMenu()">Κοινοποίηση</button>
+          <button onclick="copyLink()">Αντιγραφή link</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Καφέδες ── -->
+    <section class="category" id="coffee">
+      <div class="cat-head">
+        <h2><span class="ico">05</span>Καφέδες</h2>
+        <span class="note">specialty beans, roast εβδομάδας</span>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Espresso</div>
+          <div class="desc">Single shot — ή double για κρατικούς.</div>
+          <div class="variants"><span>single <b>€2.00</b></span><span>double <b>€2.40</b></span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Cappuccino</div>
+          <div class="desc">Με βιολογικό γάλα τοπικής φάρμας.</div>
+          <div class="variants"><span>μικρό <b>€3.00</b></span><span>μεγάλο <b>€3.60</b></span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Latte / Flat White</div>
+          <div class="desc">Βελούδινο γάλα, πλούσιο espresso.</div>
+          <div class="variants"><span>latte <b>€3.40</b></span><span>flat white <b>€3.60</b></span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">V60 / Aeropress <span class="tag signature">Brew bar</span></div>
+          <div class="desc">Single origin φίλτρου, χειροποίητο από τον barista.</div>
+        </div>
+        <div class="price">€3.80</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Ελληνικός καφές</div>
+          <div class="desc">Από παραδοσιακή βρύση, γλυκός, μέτριος ή σκέτος.</div>
+          <div class="variants"><span>μονός <b>€1.80</b></span><span>διπλός <b>€2.00</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Κρύα ροφήματα ── -->
+    <section class="category" id="cold">
+      <div class="cat-head">
+        <h2><span class="ico">06</span>Κρύα ροφήματα</h2>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Cold brew Fasoulia</div>
+          <div class="desc">24ωρη εκχύλιση, single origin.</div>
+          <div class="variants"><span>σκέτο <b>€4.00</b></span><span>με γάλα <b>€4.50</b></span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Χυμός cold press <span class="tag bio">Bio</span></div>
+          <div class="desc">Πορτοκάλι, ρόδι, παντζάρι-καρότο-τζίντζερ, ή mix εποχής.</div>
+        </div>
+        <div class="price">€4.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Freddo espresso / cappuccino</div>
+          <div class="variants"><span>espresso <b>€3.00</b></span><span>cappuccino <b>€3.40</b></span></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Smoothie ημέρας</div>
+          <div class="desc">Με εποχιακά φρούτα, γιαούρτι ή νερό καρύδας.</div>
+        </div>
+        <div class="price">€5.20</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Αρμενικη λεμονάδα</div>
+          <div class="desc">Με fresh λεμόνι, αμυγδαλέλαιο και δυόσμο.</div>
+        </div>
+        <div class="price">€4.80</div>
+      </div>
+    </section>
+
+    <!-- ── Γλυκά ── -->
+    <section class="category" id="sweets">
+      <div class="cat-head">
+        <h2><span class="ico">07</span>Γλυκά &amp; Bakery</h2>
+        <span class="note">φτιάχνονται εδώ, κάθε πρωί</span>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Πορτοκαλόπιτα</div>
+          <div class="desc">Με φύλλο κρούστας, σιρόπι και παγωτό καϊμάκι.</div>
+        </div>
+        <div class="price">€5.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Μπακλαβάς</div>
+          <div class="desc">Με καρύδια Κοζάνης και μέλι θυμαρίσιο.</div>
+        </div>
+        <div class="price">€5.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Cheesecake σπιτικό</div>
+          <div class="desc">Με fresh φρούτα του φόρτσα και ζύμη μπισκότου.</div>
+        </div>
+        <div class="price">€5.80</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Cookies σοκολάτας</div>
+          <div class="desc">Μαλακά μέσα, τραγανά έξω, με καρύδια και dark chocolate 70%.</div>
+        </div>
+        <div class="price">€2.50</div>
+      </div>
+    </section>
+
+    <!-- ── Mini Market ── -->
+    <section class="category" id="market">
+      <div class="cat-head">
+        <h2><span class="ico">08</span>Mini market</h2>
+        <span class="note">take-home προϊόντα</span>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Βιολογικά φασόλια Σισανίου <span class="tag bio">Bio</span></div>
+          <div class="desc">500g σε χάρτινη συσκευασία με τη σφραγίδα της φάρμας.</div>
+        </div>
+        <div class="price">€6.50</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Μέλι Σιάτιστας</div>
+          <div class="desc">Ανθέων ή πεύκου, 450g βάζο.</div>
+        </div>
+        <div class="price">€12.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Ελαιόλαδο extra virgin</div>
+          <div class="desc">Κορωνέικη ποικιλία, φιάλη 500ml.</div>
+        </div>
+        <div class="price">€14.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Μαρμελάδα σπιτική</div>
+          <div class="desc">Βερίκοκο, φράουλα ή κεράσι, βάζο 230g.</div>
+        </div>
+        <div class="price">€7.00</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="name">Καρύδια Κοζάνης</div>
+          <div class="desc">Χωρίς κέλυφος, σε συσκευασία 250g.</div>
+        </div>
+        <div class="price">€9.50</div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="fbrand">
+    <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M15.2 3 C 13 5, 12 8.5, 14.2 11.5 C 16.5 10.5, 17.2 7, 15.2 3 Z" fill="#7C8A5F"/><path d="M10 13 C 5.8 16, 6.2 23.5, 11.5 26.5 C 18.5 28.5, 25.5 23.5, 24.5 17 C 23.5 12, 18.8 10.2, 14 11 C 12.2 11.2, 11 12, 10 13 Z" fill="#D4A87D" stroke="#2B2A1F" stroke-width="1.4"/><path d="M13 17 C 15 15, 18 14, 21 15.5" stroke="#2B2A1F" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg></div>
+    <span class="name">Fasoulia Deli Center</span>
+  </div>
+  <p>Από το Σισάνι στην Κοζάνη — βιολογικά φασόλια, τοπικά προϊόντα, καφές με αγάπη.</p>
+  <div class="hours">
+    <span>Δευ – Πέμ · 08:00 – 00:00</span>
+    <span>Παρ – Σάβ · 08:00 – 02:00</span>
+    <span>Κυρ · 09:00 – 00:00</span>
+  </div>
+  <p>
+    <a href="tel:+306944686065">6944 686065</a>  ·
+    <a href="mailto:hello@fasoulia.gr">hello@fasoulia.gr</a>
+  </p>
+  <div class="social">
+    <a href="https://www.instagram.com/fasoulia__/" target="_blank" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.facebook.com/p/fasoulia-100086221254231/" target="_blank" aria-label="Facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+  </div>
+  <div class="ccopy">© 2026 Fasoulia Deli Center · Κοζάνη</div>
+</footer>
+
+<div class="preview-pill">
+  <span></span>
+  Mockup · menu preview
+</div>
+
+<script>
+  async function shareMenu(){
+    const data = {
+      title: 'Fasoulia Deli Center — menu',
+      text: 'Δες το menu μας στο Fasoulia Deli Center, Κοζάνη',
+      url: window.location.href
+    };
+    if(navigator.share){
+      try { await navigator.share(data); } catch(err) {}
+    } else {
+      copyLink();
+    }
+  }
+  async function copyLink(){
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert('Το link αντιγράφηκε ✓');
+    } catch(err) {
+      prompt('Αντιγράψτε το link:', window.location.href);
+    }
+  }
+</script>
+
+</body>
+</html>
